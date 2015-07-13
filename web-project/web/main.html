@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<script src="libs/jquery-2.1.0.min.js"></script>
+		<script src="scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body onLoad="paintRoom('mainCanvas')">
+		<div class="loader">
+			<div class="spin">
+			</div>
+		</div>
+		<div class="sidebar">
+			<div class="sliderGroup" id="slider1">
+				<img class="avatar" src="Awesome.png" height="50px" width="50px"/>
+				<div class="slider x">
+					X <input class="sli_x" type="range" min="0" max="1200" oninput="updateThing(1)" onchange="uploadChanges(1)"//> <label class="lab_x"></label>
+				</div>
+				<div class="slider y">
+					Y <input class="sli_y" type="range" min="0" max="1200" oninput="updateThing(1)" onchange="uploadChanges(1)"//> <label class="lab_y"></label>
+				</div>
+				<div class="slider area" style="visibility:hidden">
+					A <input class="sli_area" type="range" min="0" max="1200" oninput="updateThing(1,true)" onchange="uploadChanges(1)"//> <label class="lab_area"></label>
+				</div>
+			</div>
+			<div class="sliderGroup" id="slider2">
+				<img class="avatar" src="Awesome.png" height="50px" width="50px"/>
+				<div class="slider x">
+					X <input class="sli_x" type="range" min="0" max="1200" oninput="updateThing(2)" onchange="uploadChanges(2)"//> <label class="lab_x"></label>
+				</div>
+				<div class="slider y">
+					Y <input class="sli_y" type="range" min="0" max="1200" oninput="updateThing(2)" onchange="uploadChanges(2)"//> <label class="lab_y"></label>
+				</div>
+				<div class="slider area" style="visibility:hidden">
+					A <input class="sli_area" type="range" min="0" max="1200" oninput="updateThing(2,true)" onchange="uploadChanges(2)"/> <label class="lab_area"></label>
+				</div>
+			</div>
+			<div class="sliderGroup" id="slider3">
+				<img class="avatar" src="Awesome.png" height="50px" width="50px"/>
+				<div class="slider x">
+					X <input class="sli_x" type="range" min="0" max="1200" oninput="updateThing(3)" onchange="uploadChanges(3)"//> <label class="lab_x"></label>
+				</div>
+				<div class="slider y">
+					Y <input class="sli_y" type="range" min="0" max="1200" oninput="updateThing(3)" onchange="uploadChanges(3)"//> <label class="lab_y"></label>
+				</div>
+				<div class="slider area" style="visibility:hidden">
+					A <input class="sli_area" type="range" min="0" max="1200" oninput="updateThing(3,true)" onchange="uploadChanges(3)"//> <label class="lab_area"></label>
+				</div>
+			</div>
+
+			<div class="togglebut" id="scanMode" onClick="toggleScanMode()">
+				Scan Mode
+			</div>
+			<div class="togglebut" id="areaMode" onClick="toggleAreaMode()">
+				Area Recognizing Mode
+			</div>
+			<div class="togglebut" id="triangleMode" onClick="toggleTriangleMode()" style="display:none">
+				Device Positioning Mode
+			</div>
+		</div>
+
+		<div class="mainThing">
+			<div class="canvasHolder">
+				<canvas id="mainCanvas" class="mainCanvas" width="800" height="800">
+				</canvas>
+				<div id="beacon1" class="beaconHolder">
+					<canvas class="areaCanvas" style="visibility:hidden">
+					</canvas>
+					<img class="thing" src="Awesome.png" height="50px" width="50px"/>
+				</div>
+				<div id="beacon2" class="beaconHolder">
+					<canvas class="areaCanvas" style="visibility:hidden">
+					</canvas>
+					<img class="thing" src="Awesome.png" height="50px" width="50px"/>
+				</div>
+				<div id="beacon3" class="beaconHolder">
+					<canvas class="areaCanvas" style="visibility:hidden">
+					</canvas>
+					<img class="thing" src="Awesome.png" height="50px" width="50px"/>
+				</div>
+				<img id="tablet" src="img/padz.png" height="50px" width="50px">
+			</div>
+		</div>
+
+	</body>
+</html>
